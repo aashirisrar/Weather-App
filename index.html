@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☀️</text></svg>"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+
+    <title>Weather App</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">☀️Weather App</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto"></ul>
+
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            id="city"
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Enter a City"
+            aria-label="Search"
+          />
+          <button
+            id="submit"
+            class="btn btn-outline-primary my-2 my-sm-0"
+            type="submit"
+          >
+            Search
+          </button>
+        </form>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1 class="my-4 text-center">Weather for <span id="cityName"></span></h1>
+      <main>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Temperature</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">
+                  <span id="temp"></span
+                  ><small class="text-muted fw-light"> °C</small>
+                </h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Feels Like <span id="feels_like"></span></li>
+                  <li>Max Temperature <span id="max_temp"></span></li>
+                  <li>Min Temperature <span id="min_temp"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+              <div class="card-header py-3 text-bg-blue border-primary">
+                <h4 class="my-0 fw-normal">Clouds</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">
+                  <span id="cloud_pct"></span
+                  ><small class="text-muted fw-light"> %</small>
+                </h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Humidity <span id="humidity"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Wind Speed</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">
+                  <span id="wind_speed"></span
+                  ><small class="text-muted fw-light"> km/h</small>
+                </h1>
+                <ul class="list-unstyled mt-3 mb-4"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="display-6 text-center mb-4">Weather of Other Places</h2>
+
+        <div class="table-responsive">
+          <table class="table text-center">
+            <thead>
+              <tr>
+                <th style="width: 34%"></th>
+                <th style="width: 22%">Temp</th>
+                <th style="width: 22%">Feels Like</th>
+                <th style="width: 22%">Max Temp</th>
+                <th style="width: 22%">Min Temp</th>
+                <th style="width: 22%">Cloud Per</th>
+                <th style="width: 22%">Humidity</th>
+                <th style="width: 22%">Wind Speed</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="text-start">Islamabad</th>
+                <td><span id="temp_Islamabad"></span></td>
+                <td><span id="feels_like_Islamabad"></span></td>
+                <td><span id="max_temp_Islamabad"></span></td>
+                <td><span id="min_temp_Islamabad"></span></td>
+                <td><span id="cloud_pct_Islamabad"></span></td>
+                <td><span id="humidity_Islamabad"></span></td>
+                <td><span id="wind_speed_Islamabad"></span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Karachi</th>
+                <td><span id="temp_Karachi"></span></td>
+                <td><span id="feels_like_Karachi"></span></td>
+                <td><span id="max_temp_Karachi"></span></td>
+                <td><span id="min_temp_Karachi"></span></td>
+                <td><span id="cloud_pct_Karachi"></span></td>
+                <td><span id="humidity_Karachi"></span></td>
+                <td><span id="wind_speed_Karachi"></span></td>
+              </tr>
+            </tbody>
+
+            <tbody>
+              <tr>
+                <th scope="row" class="text-start">Multan</th>
+                <td><span id="temp_Multan"></span></td>
+                <td><span id="feels_like_Multan"></span></td>
+                <td><span id="max_temp_Multan"></span></td>
+                <td><span id="min_temp_Multan"></span></td>
+                <td><span id="cloud_pct_Multan"></span></td>
+                <td><span id="humidity_Multan"></span></td>
+                <td><span id="wind_speed_Multan"></span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Peshawar</th>
+                <td><span id="temp_Peshawar"></span></td>
+                <td><span id="feels_like_Peshawar"></span></td>
+                <td><span id="max_temp_Peshawar"></span></td>
+                <td><span id="min_temp_Peshawar"></span></td>
+                <td><span id="cloud_pct_Peshawar"></span></td>
+                <td><span id="humidity_Peshawar"></span></td>
+                <td><span id="wind_speed_Peshawar"></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+
+      <div class="container">
+        <footer class="py-3 my-4">
+          <p class="text-center text-muted">
+            © 2023 Made By Aashir Israr with ❤️ in Lahore
+          </p>
+        </footer>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
